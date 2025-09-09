@@ -15,3 +15,4 @@ public Processo (int id, String nome, int prioridade, int ciclos_necessarios, St
     this.ciclos_necessarios = ciclos_necessarios;
     this. recurso_necessario = recurso_necessario;
 }
+}
