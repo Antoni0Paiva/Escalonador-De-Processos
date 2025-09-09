@@ -1,7 +1,7 @@
 package escalonador;
 
 public class Processo {
-}
+
 int id;
 String nome;
 int prioridade;
