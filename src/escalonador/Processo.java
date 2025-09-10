@@ -18,4 +18,13 @@ public Processo (int id, String nome, int prioridade, int ciclos_necessarios, St
     this.ciclos_necessarios = ciclos_necessarios;
     this. recurso_necessario = recurso_necessario;
 }
+
+@Override
+public String toString() {
+    String prioridadeStr = switch (prioridade) {
+        case ALTA -> "Alta";
+        case MÉDIA -> "Média";
+        case BAIXA -> "Baixa";
+        default -> "Desconhecida";
+    };
 }
