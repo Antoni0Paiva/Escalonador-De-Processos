@@ -19,9 +19,27 @@ public class Processo {
             case 2 -> "Média";
             case 3 -> "Baixa";
         };
-
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public int getCiclos_necessarios() {
+        return ciclos_necessarios;
+    }
+
+    public String getRecurso_necessario() {
+        return recurso_necessario;
     }
 
 }
