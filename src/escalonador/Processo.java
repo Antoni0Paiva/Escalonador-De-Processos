@@ -5,11 +5,11 @@ public class Processo {
     public static final int MÉDIA = 2;
     public static final int BAIXA = 3;
 
-    int id;
-    String nome;
-    int prioridade;
-    int ciclos_necessarios;
-    String recurso_necessario;
+    private int id;
+    private String nome;
+    private int prioridade;
+    private int ciclos_necessarios;
+    private String recurso_necessario;
 
     public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario) {
         this.id = id;
