@@ -18,6 +18,14 @@ public class Processo {
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
+    public String getPrioridadeStr() {
+        return switch (prioridade) {
+            case 1 -> "Alta";
+            case 2 -> "Média";
+            case 3 -> "Baixa";
+            default -> "Desconhecida";
+        };
+    }
     public int getId() {
         return id;
     }
