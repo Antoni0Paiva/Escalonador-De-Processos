@@ -1,9 +1,6 @@
 package escalonador;
 
 public class Processo {
-    public static final int ALTA = 1;
-    public static final int MÉDIA = 2;
-    public static final int BAIXA = 3;
 
     private int id;
     private String nome;
