@@ -15,7 +15,7 @@ public class Processo {
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
-    public String getPrioridadeStr() {
+    public String getPrioridade() {
         return switch (prioridade) {
             case 1 -> "Alta";
             case 2 -> "Média";
@@ -31,10 +31,6 @@ public class Processo {
         return nome;
     }
 
-    public String getPrioridade() {
-        return prioridade;
-    }
-
     public int getCiclos_necessarios() {
         return ciclos_necessarios;
     }
@@ -47,7 +43,7 @@ public class Processo {
         return "Processo {" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", prioridade='" + prioridade + '\'' +
+                ", prioridade='" + getPrioridade() + '\'' +
                 ", ciclosNecessarios=" + ciclos_necessarios +
                 ", recursoNecessario='" + recurso_necessario + '\'' +
                 '}';
