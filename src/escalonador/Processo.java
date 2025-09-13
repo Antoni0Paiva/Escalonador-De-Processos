@@ -42,5 +42,14 @@ public class Processo {
     public String getRecurso_necessario() {
         return recurso_necessario;
     }
-
-}
+    @Override
+    public String toString() {
+        return "Processo {" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", prioridade='" + prioridade + '\'' +
+                ", ciclosNecessarios=" + ciclos_necessarios +
+                ", recursoNecessario='" + recurso_necessario + '\'' +
+                '}';
+    }
+    }
