@@ -17,7 +17,7 @@ public class Processo {
     }
     public String getPrioridade() {
         if (prioridade != 1 && prioridade != 2 && prioridade != 3) {
-            throw new IllegalArgumentException("Prioridade inválida! Selecione uma prioridade permitida.);
+            throw new IllegalArgumentException("Prioridade inválida! Selecione uma prioridade permitida.");
         }
         return switch (prioridade) {
             case 1 -> "Alta";
