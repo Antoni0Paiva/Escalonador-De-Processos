@@ -15,16 +15,11 @@ public class Processo {
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
-    public String getPrioridade() {
+    public int getPrioridade() {
         if (prioridade != 1 && prioridade != 2 && prioridade != 3) {
             throw new IllegalArgumentException("Prioridade inválida! Selecione uma prioridade permitida.");
         }
-        return switch (prioridade) {
-            case 1 -> "Alta";
-            case 2 -> "Média";
-            case 3 -> "Baixa";
-            default -> "Desconhecida";
-        };
+        return prioridade;
     }
     public int getId() {
         return id;
@@ -46,7 +41,7 @@ public class Processo {
         return "Processo {" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", prioridade='" + getPrioridade() + '\'' +
+                ", prioridade='" + prioridade +
                 ", ciclosNecessarios=" + ciclos_necessarios +
                 ", recursoNecessario='" + recurso_necessario + '\'' +
                 '}';
