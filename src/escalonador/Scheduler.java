@@ -32,6 +32,10 @@ public class Scheduler {
         } else if (!lista_baixa_prioridade.isEmpty()) {
             processo = lista_baixa_prioridade.remover();
         }
+        if (processo != null) {
+            processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
+            System.out.println("Executando: " + processo);
+        }
     }
 
 }
