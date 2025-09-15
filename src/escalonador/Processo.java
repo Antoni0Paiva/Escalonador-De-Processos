@@ -11,14 +11,15 @@ public class Processo {
     public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario) {
         this.id = id;
         this.nome = nome;
-        this.prioridade = prioridade;
+        if (prioridade != 1 && prioridade != 2 && prioridade != 3) {
+            throw new IllegalArgumentException("Prioridade inválida! Selecione uma prioridade permitida.");
+        } else {
+            this.prioridade = prioridade;
+        }
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
     public int getPrioridade() {
-        if (prioridade != 1 && prioridade != 2 && prioridade != 3) {
-            throw new IllegalArgumentException("Prioridade inválida! Selecione uma prioridade permitida.");
-        }
         return prioridade;
     }
     public int getId() {
