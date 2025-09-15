@@ -21,5 +21,16 @@ public class ListaDeProcessos {
     public boolean isEmpty() {
         return inicio == null;
     }
+    public Processo remover() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Lista vazia");
+        }
+        Processo processo = inicio.processo;
+        inicio = inicio.proximo;
+        if (inicio == null) {
+            fim = null;
+        }
+        return processo;
+    }
     
 }
