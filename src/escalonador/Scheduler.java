@@ -14,5 +14,13 @@ public class Scheduler {
         this.lista_bloqueados = new ListaDeProcessos();
         this.contador_ciclos_alta_prioridade = 0;
     }
+    public void adicionarProcesso(Processo processo) {
+        switch (processo.getPrioridade()) {
+            case 1 -> lista_alta_prioridade.adicionar(processo);
+            case 2 -> lista_media_prioridade.adicionar(processo);
+            case 3 -> lista_baixa_prioridade.adicionar(processo);
+            default -> throw new IllegalArgumentException("Prioridade inválida!");
+        }
+    }
 
 }
