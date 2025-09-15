@@ -19,7 +19,6 @@ public class Scheduler {
             case 1 -> lista_alta_prioridade.adicionar(processo);
             case 2 -> lista_media_prioridade.adicionar(processo);
             case 3 -> lista_baixa_prioridade.adicionar(processo);
-            default -> throw new IllegalArgumentException("Prioridade inválida!");
         }
     }
 
