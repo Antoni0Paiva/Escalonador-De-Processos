@@ -36,6 +36,15 @@ public class Scheduler {
             processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
             System.out.println("Executando: " + processo);
         }
+        if (processo != null) {
+            if (processo.getCiclos_necessarios() > 0) {
+                adicionarProcesso(processo);
+            } else {
+                System.out.println("Processo finalizado: " + processo.getNome());
+            }
+        } else {
+            System.out.println("Nenhum processo disponível para executar.");
+        }
     }
 
 }
