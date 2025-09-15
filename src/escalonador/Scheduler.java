@@ -21,5 +21,17 @@ public class Scheduler {
             case 3 -> lista_baixa_prioridade.adicionar(processo);
         }
     }
+    public void executarCicloDeCPU() {
+        Processo processo = null;
+
+        if (!lista_alta_prioridade.isEmpty()) {
+            processo = lista_alta_prioridade.remover();
+            contador_ciclos_alta_prioridade++;
+        } else if (!lista_media_prioridade.isEmpty()) {
+            processo = lista_media_prioridade.remover();
+        } else if (!lista_baixa_prioridade.isEmpty()) {
+            processo = lista_baixa_prioridade.remover();
+        }
+    }
 
 }
