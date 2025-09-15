@@ -33,6 +33,9 @@ public class Processo {
     public int getCiclos_necessarios() {
         return ciclos_necessarios;
     }
+    public void setCiclos_necessarios(int ciclos){
+        this.ciclos_necessarios = ciclos;
+    }
 
     public String getRecurso_necessario() {
         return recurso_necessario;
