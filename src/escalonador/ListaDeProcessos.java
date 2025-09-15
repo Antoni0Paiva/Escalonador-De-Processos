@@ -18,5 +18,8 @@ public class ListaDeProcessos {
             fim = novo;
         }
     }
+    public boolean isEmpty() {
+        return inicio == null;
+    }
     
 }
