@@ -40,6 +40,9 @@ public class Processo {
     public String getRecurso_necessario() {
         return recurso_necessario;
     }
+    public void setRecurso_necessario(String recurso_necessario) {
+        this.recurso_necessario = recurso_necessario;
+    }
     @Override
     public String toString() {
         return "Processo {" +
