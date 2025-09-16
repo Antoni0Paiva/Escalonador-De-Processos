@@ -28,32 +28,6 @@ public class Scheduler {
             adicionarProcesso(desbloqueado);
         }
     }
-    public void executarCicloDeCPU() {
-        desbloquearProcesso();
-        Processo processo = null;
-
-        if (!lista_alta_prioridade.isEmpty()) {
-            processo = lista_alta_prioridade.remover();
-            contador_ciclos_alta_prioridade++;
-        } else if (!lista_media_prioridade.isEmpty()) {
-            processo = lista_media_prioridade.remover();
-        } else if (!lista_baixa_prioridade.isEmpty()) {
-            processo = lista_baixa_prioridade.remover();
-        }
-        if (processo != null) {
-            processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
-            System.out.println("Executando: " + processo);
-        }
-        if (processo != null) {
-            if (processo.getCiclos_necessarios() > 0) {
-                adicionarProcesso(processo);
-            } else {
-                System.out.println("Processo finalizado: " + processo.getNome());
-            }
-        } else {
-            System.out.println("Nenhum processo disponível para executar.");
-        }
-    }
     private Processo escolherProcesso() {
         Processo processo = null;
         if (contador_ciclos_alta_prioridade >= 5) {
@@ -78,5 +52,27 @@ public class Scheduler {
         }
 
         return processo;
+    }
+    public void executarCicloDeCPU() {
+        desbloquearProcesso();
+        Processo processo = escolherProcesso();
+
+        if (processo == null) {
+            System.out.println("Nenhum processo disponível para executar.");
+            return;
+        }
+        if (processo != null) {
+            processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
+            System.out.println("Executando: " + processo);
+        }
+        if (processo != null) {
+            if (processo.getCiclos_necessarios() > 0) {
+                adicionarProcesso(processo);
+            } else {
+                System.out.println("Processo finalizado: " + processo.getNome());
+            }
+        } else {
+            System.out.println("Nenhum processo disponível para executar.");
+        }
     }
 }
