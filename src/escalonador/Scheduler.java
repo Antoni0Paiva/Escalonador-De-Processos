@@ -21,6 +21,13 @@ public class Scheduler {
             case 3 -> lista_baixa_prioridade.adicionar(processo);
         }
     }
+    private void desbloquearProcesso() {
+        if (!lista_bloqueados.isEmpty()) {
+            Processo desbloqueado = lista_bloqueados.remover();
+            System.out.println("Desbloqueando processo: " + desbloqueado.getNome());
+            adicionarProcesso(desbloqueado);
+        }
+    }
     public void executarCicloDeCPU() {
         Processo processo = null;
 
