@@ -54,5 +54,29 @@ public class Scheduler {
             System.out.println("Nenhum processo disponível para executar.");
         }
     }
+    private Processo escolherProcesso() {
+        Processo processo = null;
+        if (contador_ciclos_alta_prioridade >= 5) {
+            if (!lista_media_prioridade.isEmpty()) {
+                processo = lista_media_prioridade.remover();
+                contador_ciclos_alta_prioridade = 0;
+                return processo;
+            } else if (!lista_baixa_prioridade.isEmpty()) {
+                processo = lista_baixa_prioridade.remover();
+                contador_ciclos_alta_prioridade = 0;
+                return processo;
+            } else {
+                contador_ciclos_alta_prioridade = 0;
+            }
+        }
+        if (!lista_alta_prioridade.isEmpty()) {
+            processo = lista_alta_prioridade.remover();
+        } else if (!lista_media_prioridade.isEmpty()) {
+            processo = lista_media_prioridade.remover();
+        } else if (!lista_baixa_prioridade.isEmpty()) {
+            processo = lista_baixa_prioridade.remover();
+        }
 
+        return processo;
+    }
 }
