@@ -61,7 +61,13 @@ public class Scheduler {
             System.out.println("Nenhum processo disponível para executar.");
             return;
         }
-        if (processo != null) {
+        if ("DISCO".equalsIgnoreCase(processo.getRecurso_necessario())) {
+            processo.setRecurso_necessario("DISCO_JA");
+            lista_bloqueados.adicionar(processo);
+            System.out.println("Processo " + processo.getNome() + " bloqueado (precisa de DISCO).");
+            return;
+        }
+            if (processo != null) {
             processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
             System.out.println("Executando: " + processo);
         }
