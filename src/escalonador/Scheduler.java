@@ -71,14 +71,14 @@ public class Scheduler {
             processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
             System.out.println("Executando: " + processo);
         }
-        if (processo != null) {
-            if (processo.getCiclos_necessarios() > 0) {
-                adicionarProcesso(processo);
-            } else {
-                System.out.println("Processo finalizado: " + processo.getNome());
+        if (processo.getCiclos_necessarios() > 0) {
+            switch (processo.getPrioridade()) {
+                case 1 -> lista_alta_prioridade.adicionar(processo);
+                case 2 -> lista_media_prioridade.adicionar(processo);
+                case 3 -> lista_baixa_prioridade.adicionar(processo);
             }
         } else {
-            System.out.println("Nenhum processo disponível para executar.");
+            System.out.println("Processo finalizado: " + processo.getNome());
         }
     }
 }
