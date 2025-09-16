@@ -29,6 +29,7 @@ public class Scheduler {
         }
     }
     public void executarCicloDeCPU() {
+        desbloquearProcesso();
         Processo processo = null;
 
         if (!lista_alta_prioridade.isEmpty()) {
