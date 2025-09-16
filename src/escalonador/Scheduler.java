@@ -70,6 +70,9 @@ public class Scheduler {
             if (processo != null) {
             processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
             System.out.println("Executando: " + processo);
+                if (processo.getPrioridade() == 1) {
+                    contador_ciclos_alta_prioridade++;
+                }
         }
         if (processo.getCiclos_necessarios() > 0) {
             switch (processo.getPrioridade()) {
