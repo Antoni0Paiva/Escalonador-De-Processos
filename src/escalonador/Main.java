@@ -37,5 +37,6 @@ public class Main {
             scheduler.executarCicloDeCPU();
             ciclo++;
         }
+        scheduler.execTodosCiclos();
     }
 }

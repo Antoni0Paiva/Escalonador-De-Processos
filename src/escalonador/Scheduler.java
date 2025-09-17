@@ -66,7 +66,7 @@ public class Scheduler {
             return;
         }
         if ("DISCO".equalsIgnoreCase(processo.getRecurso_necessario())) {
-            processo.setRecurso_necessario("DISCO_JA");
+            processo.setRecurso_necessario("null");
             lista_bloqueados.adicionar(processo);
             System.out.println("Processo " + processo.getNome() + " bloqueado (precisa de DISCO).");
             return;
@@ -87,7 +87,6 @@ public class Scheduler {
         } else {
             System.out.println("Processo finalizado: " + processo.getNome());
         }
-        imprimirEstado();
     }
     public void imprimirEstado() {
         System.out.println("===== Estado do Sistema =====");
@@ -102,5 +101,13 @@ public class Scheduler {
                 lista_media_prioridade.isEmpty() &&
                 lista_baixa_prioridade.isEmpty() &&
                 lista_bloqueados.isEmpty();
+    }
+    public void execTodosCiclos() {
+        int ciclo = 1;
+        if (estaVazio()) {
+            imprimirEstado();
+            System.out.println("Finalizado! Nenhum ciclo a ser concluído!");
+            return;
+        }
     }
 }
