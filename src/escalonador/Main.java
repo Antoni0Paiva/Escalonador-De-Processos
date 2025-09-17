@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.out.println("Uso: java escalonador.Main <arquivo.csv>");
+            System.out.println("Uso: java escalonador.Main <arquivo.txt>");
             return;
         }
         Scheduler scheduler = new Scheduler();
