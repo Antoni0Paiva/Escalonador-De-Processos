@@ -1,4 +1,7 @@
 package escalonador;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Scheduler {
     private ListaDeProcessos lista_alta_prioridade;
