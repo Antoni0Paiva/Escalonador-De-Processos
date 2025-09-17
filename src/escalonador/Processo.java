@@ -16,6 +16,9 @@ public class Processo {
         } else {
             this.prioridade = prioridade;
         }
+        if (ciclos_necessarios <= 0) {
+            throw new IllegalArgumentException("Quantidade de ciclos deve ser maior que 0. Valor fornecido: " + ciclos_necessarios);
+        }
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
