@@ -31,4 +31,11 @@ public class Main {
             System.out.println("Erro ao ler arquivo: " + e.getMessage());
             return;
         }
+        int ciclo = 1;
+        while (!scheduler.estaVazio()) {
+            System.out.println(">>> CICLO " + ciclo);
+            scheduler.executarCicloDeCPU();
+            ciclo++;
+        }
+    }
 }
