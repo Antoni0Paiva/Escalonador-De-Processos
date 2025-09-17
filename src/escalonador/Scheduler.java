@@ -54,6 +54,7 @@ public class Scheduler {
         return processo;
     }
     public void executarCicloDeCPU() {
+        imprimirEstado();
         desbloquearProcesso();
         Processo processo = escolherProcesso();
 
