@@ -1,4 +1,5 @@
 package escalonador;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,13 +18,25 @@ public class Scheduler {
         this.lista_bloqueados = new ListaDeProcessos();
         this.contador_ciclos_alta_prioridade = 0;
     }
+
     public void adicionarProcesso(Processo processo) {
+        if (contemId(processo.getId())) {
+            throw new IllegalArgumentException("Já existe um processo com o ID " + processo.getId());
+        }
         switch (processo.getPrioridade()) {
             case 1 -> lista_alta_prioridade.adicionar(processo);
             case 2 -> lista_media_prioridade.adicionar(processo);
             case 3 -> lista_baixa_prioridade.adicionar(processo);
         }
     }
+
+    private boolean contemId(int id) {
+        return lista_alta_prioridade.contemId(id)
+                || lista_media_prioridade.contemId(id)
+                || lista_baixa_prioridade.contemId(id)
+                || lista_bloqueados.contemId(id);
+    }
+
     private void desbloquearProcesso() {
         if (!lista_bloqueados.isEmpty()) {
             Processo desbloqueado = lista_bloqueados.remover();
@@ -31,6 +44,7 @@ public class Scheduler {
             adicionarProcesso(desbloqueado);
         }
     }
+
     private Processo escolherProcesso() {
         Processo processo = null;
         if (contador_ciclos_alta_prioridade >= 5) {
@@ -53,9 +67,9 @@ public class Scheduler {
         } else if (!lista_baixa_prioridade.isEmpty()) {
             processo = lista_baixa_prioridade.remover();
         }
-
         return processo;
     }
+
     public void executarCicloDeCPU() {
         imprimirEstado();
         desbloquearProcesso();
@@ -73,10 +87,10 @@ public class Scheduler {
         }
 
         processo.setCiclos_necessarios(processo.getCiclos_necessarios() - 1);
-            System.out.println("Executando: " + processo);
-                if (processo.getPrioridade() == 1) {
-                    contador_ciclos_alta_prioridade++;
-                }
+        System.out.println("Executando: " + processo);
+        if (processo.getPrioridade() == 1) {
+            contador_ciclos_alta_prioridade++;
+        }
 
         if (processo.getCiclos_necessarios() > 0) {
             switch (processo.getPrioridade()) {
@@ -88,6 +102,7 @@ public class Scheduler {
             System.out.println("Processo finalizado: " + processo.getNome());
         }
     }
+
     public void imprimirEstado() {
         System.out.println("===== Estado do Sistema =====");
         lista_alta_prioridade.imprimirLista("Alta prioridade");
@@ -96,12 +111,14 @@ public class Scheduler {
         lista_bloqueados.imprimirLista("Bloqueados");
         System.out.println("=============================\n");
     }
+
     public boolean estaVazio() {
         return lista_alta_prioridade.isEmpty() &&
                 lista_media_prioridade.isEmpty() &&
                 lista_baixa_prioridade.isEmpty() &&
                 lista_bloqueados.isEmpty();
     }
+
     public void execTodosCiclos() {
         int ciclo = 1;
         if (estaVazio()) {

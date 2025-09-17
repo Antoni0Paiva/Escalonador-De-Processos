@@ -45,5 +45,14 @@ public class ListaDeProcessos {
         }
         System.out.println();
     }
-
+    public boolean contemId(int id) {
+        No atual = inicio;
+        while (atual != null) {
+            if (atual.processo.getId() == id) {
+                return true;
+            }
+            atual = atual.proximo;
+        }
+        return false;
+    }
 }
