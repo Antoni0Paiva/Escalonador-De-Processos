@@ -93,4 +93,10 @@ public class Scheduler {
         lista_bloqueados.imprimirLista("Bloqueados");
         System.out.println("=============================\n");
     }
+    public boolean estaVazio() {
+        return lista_alta_prioridade.isEmpty() &&
+                lista_media_prioridade.isEmpty() &&
+                lista_baixa_prioridade.isEmpty() &&
+                lista_bloqueados.isEmpty();
+    }
 }
