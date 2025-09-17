@@ -9,5 +9,6 @@ public class Main {
             System.out.println("Uso: java escalonador.Main <arquivo.csv>");
             return;
         }
+        Scheduler scheduler = new Scheduler();
     }
 }
