@@ -83,5 +83,14 @@ public class Scheduler {
         } else {
             System.out.println("Processo finalizado: " + processo.getNome());
         }
+        imprimirEstado();
+    }
+    public void imprimirEstado() {
+        System.out.println("===== Estado do Sistema =====");
+        lista_alta_prioridade.imprimirLista("Alta prioridade");
+        lista_media_prioridade.imprimirLista("Média prioridade");
+        lista_baixa_prioridade.imprimirLista("Baixa prioridade");
+        lista_bloqueados.imprimirLista("Bloqueados");
+        System.out.println("=============================\n");
     }
 }
