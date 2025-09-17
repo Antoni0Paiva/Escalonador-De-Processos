@@ -32,5 +32,18 @@ public class ListaDeProcessos {
         }
         return processo;
     }
-    
+    public void imprimirLista(String nomeLista) {
+        System.out.print(nomeLista + ": ");
+        No atual = inicio;
+        if (atual == null) {
+            System.out.println("[vazia]");
+            return;
+        }
+        while (atual != null) {
+            System.out.print(atual.processo.getNome() + "(id=" + atual.processo.getId() + ", ciclos=" + atual.processo.getCiclos_necessarios() + ") ");
+            atual = atual.proximo;
+        }
+        System.out.println();
+    }
+
 }
