@@ -122,6 +122,7 @@ public class Scheduler {
     public void execTodosCiclos() {
         int ciclo = 1;
         if (estaVazio()) {
+            System.out.println();
             imprimirEstado();
             System.out.println("Finalizado! Nenhum ciclo a ser concluído!");
             return;

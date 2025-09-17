@@ -47,10 +47,10 @@ public class Processo {
     public String toString() {
         return "Processo {" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", prioridade='" + prioridade +
-                ", ciclosNecessarios=" + ciclos_necessarios +
-                ", recursoNecessario='" + recurso_necessario + '\'' +
+                ", nome = '" + nome + '\'' +
+                ", prioridade = " + prioridade +
+                ", ciclosNecessarios = " + ciclos_necessarios +
+                ", recursoNecessario = '" + recurso_necessario + '\'' +
                 '}';
     }
     }
