@@ -1,13 +1,18 @@
 package escalonador;
 
+/** Classe da estrutura de dados que foi criada */
 public class ListaDeProcessos {
     No inicio;
     No fim;
 
+    /** Construtor para inicializar uma lista vazia. */
     public ListaDeProcessos() {
         this.inicio = null;
         this.fim = null;
     }
+
+
+    /** Adiciona um processo no final da lista. */
     public void adicionar(Processo processo) {
         No novo = new No(processo);
         if (inicio == null) {
@@ -18,9 +23,11 @@ public class ListaDeProcessos {
             fim = novo;
         }
     }
+    /** Retorna true se a lista estiver vazia. */
     public boolean isEmpty() {
         return inicio == null;
     }
+    /** Remove e retorna o processo do início da lista. */
     public Processo remover() {
         if (isEmpty()) {
             throw new IllegalStateException("Lista vazia");
@@ -32,6 +39,7 @@ public class ListaDeProcessos {
         }
         return processo;
     }
+    /** Imprime o conteúdo da lista no console. */
     public void imprimirLista(String nomeLista) {
         System.out.print(nomeLista + ": ");
         No atual = inicio;
@@ -45,6 +53,7 @@ public class ListaDeProcessos {
         }
         System.out.println();
     }
+    /** Verifica se um processo com um ID específico existe na lista. */
     public boolean contemId(int id) {
         No atual = inicio;
         while (atual != null) {

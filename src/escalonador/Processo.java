@@ -1,5 +1,6 @@
 package escalonador;
 
+/** Representa um processo com seus atributos e métodos.*/
 public class Processo {
 
     private int id;
@@ -8,6 +9,7 @@ public class Processo {
     private int ciclos_necessarios;
     private String recurso_necessario;
 
+    /** Construtor para criar um novo processo.*/
     public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario) {
         this.id = id;
         this.nome = nome;
@@ -22,6 +24,7 @@ public class Processo {
         this.ciclos_necessarios = ciclos_necessarios;
         this.recurso_necessario = recurso_necessario;
     }
+    // Getters e Setters para os atributos do processo.
     public int getPrioridade() {
         return prioridade;
     }
@@ -46,6 +49,8 @@ public class Processo {
     public void setRecurso_necessario(String recurso_necessario) {
         this.recurso_necessario = recurso_necessario;
     }
+
+    /** Retorna uma representação em String do objeto Processo.*/
     @Override
     public String toString() {
         return "Processo {" +
@@ -56,4 +61,4 @@ public class Processo {
                 ", recursoNecessario = '" + recurso_necessario + '\'' +
                 '}';
     }
-    }
+}

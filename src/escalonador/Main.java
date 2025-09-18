@@ -3,7 +3,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/** Classe principal para executar o programa a partir de um arquivo de entrada.*/
 public class Main {
+    /** Ponto de entrada do programa. */
     public static void main(String[] args) {
         if (args.length < 1) {
             System.out.println("Uso: java escalonador.Main <arquivo.txt>");
@@ -11,6 +13,7 @@ public class Main {
         }
         Scheduler scheduler = new Scheduler();
 
+        // Leitura de processos do arquivo de entrada
         try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
             String linha;
             while ((linha = br.readLine()) != null) {
@@ -31,6 +34,7 @@ public class Main {
             System.out.println("Erro ao ler arquivo: " + e.getMessage());
             return;
         }
+        // Loop principal de execução do escalonador.
         int ciclo = 1;
         while (!scheduler.estaVazio()) {
             System.out.println(">>> CICLO " + ciclo);
