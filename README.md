@@ -50,6 +50,7 @@ O projeto é composto pelas seguintes classes:
 - Arquivo de entrada `.txt` com os processos na seguinte formatação:
 id nome prioridade ciclos recurso
 Exemplo (`processos.txt`):
+
 1 P1 1 4 DISCO
 2 P2 2 3 null
 3 P3 3 5 DISCO
