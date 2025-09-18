@@ -86,8 +86,8 @@ Caso utilize o IntelliJ IDEA:
 
 ## Exemplo de Saída
 Ao rodar o programa, a saída será semelhante a:
-
->>> CICLO 1>>>
+```bash
+>>> CICLO 1
 
 ===== Estado do Sistema =====
 
@@ -104,8 +104,7 @@ Bloqueados: [vazia]
 
 Processo P1 bloqueado (precisa de DISCO).
 
-
->>> CICLO 2 >>>
+>>> CICLO 2
 
 ===== Estado do Sistema =====
 
@@ -121,7 +120,7 @@ Bloqueados: P1(id=1, ciclos=4)
 
 
 Executando: Processo {id=2, nome='P2', prioridade=2, ciclosNecessarios=2, recursoNecessario='null'}
-
+```
 
 ## Relatório
 Um relatório separado (relatorio_analise.pdf) foi elaborado contendo:
