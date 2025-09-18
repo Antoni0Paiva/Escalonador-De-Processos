@@ -52,9 +52,13 @@ id nome prioridade ciclos recurso
 Exemplo (`processos.txt`):
 
 1 P1 1 4 DISCO
+
 2 P2 2 3 null
+
 3 P3 3 5 DISCO
+
 4 P4 1 2 null
+
   
   ### 2. Compilação
 No terminal, dentro da raiz do repositório (pasta que contém o diretório `escalonador`):
