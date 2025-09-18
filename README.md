@@ -88,36 +88,21 @@ Caso utilize o IntelliJ IDEA:
 Ao rodar o programa, a saída será semelhante a:
 ```bash
 >>> CICLO 1
-
 ===== Estado do Sistema =====
-
 Alta prioridade: P1(id=1, ciclos=4)
-
 Média prioridade: P2(id=2, ciclos=3)
-
 Baixa prioridade: P3(id=3, ciclos=5)
-
 Bloqueados: [vazia]
-
 =============================
-
 
 Processo P1 bloqueado (precisa de DISCO).
-
 >>> CICLO 2
-
 ===== Estado do Sistema =====
-
 Alta prioridade: [vazia]
-
 Média prioridade: P2(id=2, ciclos=3)
-
 Baixa prioridade: P3(id=3, ciclos=5)
-
 Bloqueados: P1(id=1, ciclos=4)
-
 =============================
-
 
 Executando: Processo {id=2, nome='P2', prioridade=2, ciclosNecessarios=2, recursoNecessario='null'}
 ```
