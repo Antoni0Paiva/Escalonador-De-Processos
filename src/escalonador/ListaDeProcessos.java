@@ -1,6 +1,6 @@
 package escalonador;
 
-/** Classe da estrutura de dados que foi criada */
+/** Classe da estrutura de dados criada */
 public class ListaDeProcessos {
     No inicio;
     No fim;
