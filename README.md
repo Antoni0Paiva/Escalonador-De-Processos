@@ -47,9 +47,31 @@ O projeto é composto pelas seguintes classes:
 
 ### 1. Pré-requisitos
 - **Java JDK 17+** (ou versão compatível) instalado.  
-- Arquivo de entrada `.txt` com os processos na seguinte formatação:
+- Clone o repositório: git clone https://github.com/Antoni0Paiva/Escalonador-De-Processos.git
+- Arquivo de entrada .txt com os processos na seguinte formatação:
+
 id nome prioridade ciclos recurso
-Exemplo (`processos.txt`):
+
+Onde:
+
+id → identificador único do processo (número inteiro).
+
+nome → nome do processo (string sem espaços).
+
+prioridade → nível de prioridade do processo:
+
+1 = alta prioridade
+
+2 = média prioridade
+
+3 = baixa prioridade
+
+ciclos → número de ciclos necessários para finalizar o processo.
+
+recurso → recurso necessário para execução (use "DISCO" ou "null" caso não necessite de recurso).
+
+
+Exemplo (arquivo.txt):
 
 1 P1 1 4 DISCO
 
@@ -58,7 +80,6 @@ Exemplo (`processos.txt`):
 3 P3 3 5 DISCO
 
 4 P4 1 2 null
-
   
   ### 2. Compilação
 No terminal, dentro da raiz do repositório (pasta que contém o diretório `escalonador`):
